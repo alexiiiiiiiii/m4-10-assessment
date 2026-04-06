@@ -51,9 +51,9 @@ pip install numpy pandas matplotlib seaborn scikit-learn scipy flask joblib requ
 ### Task 2 — Supervised Model Pipeline
 
 1. Prepare the full dataset for supervised classification: target = `species`, features = all other columns.
-2. Build a preprocessing pipeline using `ColumnTransformer`:
-   - Numeric features: impute missing values (`SimpleImputer`, strategy='median') → scale (`StandardScaler`).
-   - Categorical features: impute missing values (`SimpleImputer`, strategy='most_frequent') → one-hot encode (`OneHotEncoder`).
+2. Drop rows with missing values using `dropna()`, then build a preprocessing pipeline using `ColumnTransformer`:
+   - Numeric features: scale (`StandardScaler`).
+   - Categorical features: one-hot encode (`OneHotEncoder`).
 3. Train and evaluate **at least 3 different models** (e.g., LogisticRegression, RandomForest, SVC) using **stratified 5-fold cross-validation**. Report accuracy, precision (macro), recall (macro), and F1 (macro) for each.
 4. Select the best model based on F1 score.
 5. Define a hyperparameter grid (at least 3 parameters) and run `GridSearchCV` with stratified 5-fold CV.
